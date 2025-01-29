@@ -1,7 +1,7 @@
 import { loginEventExecutive } from "./login";
 import { selectBirthDay, selectlastnameRandom, selectNameRandom, selectRandomNumber } from "./utils/functions";
 
-class CreateEventsOperator {
+class CreateEventsPrivateOperator {
   async formEventsOperator(page) {
     let keywors = {
         loremIpsum: "Lorem Ipsum es simplemente el texto de relleno de las imprentas y archivos de texto. Lorem Ipsum ha sido el texto de relleno estándar de las industrias desde el año 1500, cuando un impresor (N. del T. persona que se dedica a la imprenta) desconocido usó una galería de textos y los mezcló de tal manera que logró hacer un libro de textos especimen.",
@@ -23,7 +23,7 @@ class CreateEventsOperator {
     await page.locator(".sidebar-option-wrapper").nth(1).click();
     await page.getByText("Crear solicitud").click();
     await page.locator(locators.labelOperator).click();
-    await page.locator('select[name="Operador"]').first().selectOption('number:3564');
+    await page.locator('select[name="Operador"]').first().selectOption('number:3568');
     await page.waitForTimeout(1000)
     await page.mouse.click(500, 300);
     await page.locator('select[name="Operador"]').nth(1).selectOption('number:76',{force: true});
@@ -88,4 +88,4 @@ class CreateEventsOperator {
   }
 }
 
-export const createEventsOperator = new CreateEventsOperator();
+export const createEventsPrivateOperator = new CreateEventsPrivateOperator();
